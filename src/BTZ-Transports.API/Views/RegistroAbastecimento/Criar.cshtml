@@ -1,0 +1,80 @@
+﻿@using BTZ_Transports.API.ViewModels;
+@model BTZ_Transports.API.ViewModels.RegistroAbastecimentoViewModel
+
+@{
+    ViewData["Title"] = "Criar";
+  
+    var motoristas = ViewBag.Motoristas as IEnumerable<MotoristaViewModel>;
+    var veiculos = ViewBag.Veiculos as IEnumerable<VeiculoViewModel>;
+ 
+}
+
+<h1>Criar</h1>
+
+<h4>Registros de Abastecimento</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form enctype="application/json" asp-action="Adicionar" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="MotoristaId" class="control-label">Selecione um Motorista</label>
+                <select asp-for="MotoristaId" class="form-control">
+                    <option value="">Selecione...</option>
+                    @if (veiculos.Any())
+                    {
+                        @foreach (var motorista in veiculos)
+                        {
+                            <option value="@motorista.Id">@motorista.Nome</option>
+                        }
+                    }
+                </select>
+                <span asp-validation-for="MotoristaId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="VeiculoId" class="control-label">Selecione um Veículo</label>
+                <select asp-for="VeiculoId" class="form-control">
+                    <option value="">Selecione...</option>
+                    @if (veiculos.Any())
+                    {
+                        @foreach (var veiculo in veiculos)
+                        {
+                            <option value="@veiculo.Id">@veiculo.Nome</option>
+                        }
+                    }
+                </select>
+                <span asp-validation-for="VeiculoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CombustivelId" class="control-label"></label>
+                <select asp-for="CombustivelId" class="form-control">
+                    <option value="1">Gasolina</option>
+                    <option value="2">Etanol</option>
+                    <option value="3">Disel</option>
+                </select>
+                <span asp-validation-for="CombustivelId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="QuantidadeAbastecida" class="control-label"></label>
+                <input asp-for="QuantidadeAbastecida" class="form-control" type="number" pattern="[0-9]*" maxlength="11" />
+                <span asp-validation-for="QuantidadeAbastecida" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Data" class="control-label"></label>
+                <input asp-for="Data" class="form-control" type="date" />
+                <span asp-validation-for="Data" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Adicionar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar a lista</a>
+</div>
+ 

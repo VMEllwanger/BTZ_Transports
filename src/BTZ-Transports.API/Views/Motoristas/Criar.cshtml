@@ -1,0 +1,63 @@
+﻿@model BTZ_Transports.API.ViewModels.MotoristaViewModel
+
+@{
+    ViewData["Title"] = "Criar";
+}
+
+<h1>Criar</h1>
+
+<h4>Notorista</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form enctype="application/json" asp-action="Adicionar" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CPF" class="control-label"></label>
+                <input asp-for="CPF" class="form-control" type="number" pattern="[0-9]*" maxlength="11" />
+                <span asp-validation-for="CPF" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumeroCNH" class="control-label"></label>
+                <input asp-for="NumeroCNH" class="form-control" type="number" pattern="[0-9]*" maxlength="10" />
+                <span asp-validation-for="NumeroCNH" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoriaCNH" class="control-label"></label>
+                <select asp-for="CategoriaCNH" class="form-control">
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                </select>
+                <span asp-validation-for="CategoriaCNH" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataDeNascimento" class="control-label"></label>
+                <input asp-for="DataDeNascimento" class="form-control" type="date" />
+                <span asp-validation-for="DataDeNascimento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <select asp-for="Status" class="form-control">
+                    <option value="1">Ativo</option>
+                    <option value="0">Inativo</option>
+                </select>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Adicionar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar a lista</a>
+</div>
+ 

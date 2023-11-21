@@ -1,0 +1,92 @@
+﻿@model IEnumerable<BTZ_Transports.API.ViewModels.VeiculoViewModel>
+
+@{
+    ViewData["Title"] = "Veiculos Cadastrados";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Criar"><spam class="fa fa-plus"></spam> Novo</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr> 
+            <th>
+                Nome
+            </th>
+            <th>
+                Combustivel
+            </th>
+            <th>
+                Fabricante
+            </th>
+            <th>
+                AnoDeFabricacao
+            </th>
+            <th>
+                CapacidadeMaximaDoTanque
+            </th>
+            <th>
+                Observacao
+            </th>
+            <th>
+                Ações
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+              
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CombustivelId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fabricante)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AnoDeFabricacao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CapacidadeMaximaDoTanque)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Observacao)
+                </td>
+                <td>  
+                    <botao tipo-botao="Editar" route-id="@item.Id"></botao>
+                    <botao tipo-botao="Excluir" route-id="@item.Id"></botao>
+                </td>
+            </tr>
+        }
+
+        <form id="antiForgeryForm" method="post">
+            @Html.AntiForgeryToken()
+        </form>
+    </tbody>
+</table>
+
+ 
+<!-- Modal de Exclusão -->
+<div class="modal fade" id="excluirModal" tabindex="-1" role="dialog" aria-labelledby="excluirModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="excluirModalLabel">Confirmar Exclusão</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+                Tem certeza de que deseja excluir este produto?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" id="confirmarExclusao">Excluir</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34004.107
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BTZ-Transports.Negocio", "src\BTZ-Transports.Negocio\BTZ-Transports.Negocio.csproj", "{63855F5A-5922-4B6E-B964-C156EA629F99}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BTZ-Transports.Dados", "src\BTZ-Transports.Dados\BTZ-Transports.Dados.csproj", "{4496FBF9-1B20-4D40-87F1-1ADACD94633F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BTZ-Transports.Negocio.UnitTests", "test\BTZ-Transports.Negocio.UnitTests\BTZ-Transports.Negocio.UnitTests.csproj", "{1C946B16-0F15-467F-9F39-EC963817DC68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BTZ-Transports.API", "src\BTZ-Transports.API\BTZ-Transports.API.csproj", "{177C1D2A-B98A-4BA6-9A59-B41E83789BC0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63855F5A-5922-4B6E-B964-C156EA629F99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63855F5A-5922-4B6E-B964-C156EA629F99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63855F5A-5922-4B6E-B964-C156EA629F99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63855F5A-5922-4B6E-B964-C156EA629F99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4496FBF9-1B20-4D40-87F1-1ADACD94633F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4496FBF9-1B20-4D40-87F1-1ADACD94633F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4496FBF9-1B20-4D40-87F1-1ADACD94633F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4496FBF9-1B20-4D40-87F1-1ADACD94633F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C946B16-0F15-467F-9F39-EC963817DC68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C946B16-0F15-467F-9F39-EC963817DC68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C946B16-0F15-467F-9F39-EC963817DC68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C946B16-0F15-467F-9F39-EC963817DC68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{177C1D2A-B98A-4BA6-9A59-B41E83789BC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{177C1D2A-B98A-4BA6-9A59-B41E83789BC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{177C1D2A-B98A-4BA6-9A59-B41E83789BC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{177C1D2A-B98A-4BA6-9A59-B41E83789BC0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B55FE287-7BF8-480B-9550-1F0F6A1C7AE6}
+	EndGlobalSection
+EndGlobal
